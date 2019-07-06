@@ -1,0 +1,14 @@
+
+<h2>Hi {{owner.username}}!  Welcome to Owner Page</h2>
+
+<nav><a align="right" routerLink="/login" routerLinkActive="active">Logout</a></nav>
+<h3>
+<nav>
+  <a routerLink="/ownerProduct" routerLinkActive="active">Product Operations</a>
+  <br><br>
+   <a routerLink="/ownerCustomer" routerLinkActive="active"> Customer Operations</a>
+   <br><br>
+   <a routerLink="/ownerOrder" routerLinkActive="active">Order Operations</a>
+</nav>
+<h3>
+<router-outlet></router-outlet>

@@ -1,0 +1,27 @@
+<nav><a align="right" routerLink="/login" routerLinkActive="active">Logout</a></nav>
+<nav><a routerLink="/owner" routerLinkActive="active">Back to Owner Page</a></nav>
+<router-outlet></router-outlet>
+<h3> Username : {{owner.username}}</h3>
+
+		<h2>Create Product </h2>
+		Product Name: <input type="text"  [(ngModel)]="newProduct" name="product_name" style="margin-left: 5px;"><br>
+		<button (click)="createProduct()" style="margin-top: 20px;">Create Product</button>
+		<h2>Delete Product </h2>
+		Product ID:<input type="text" [(ngModel)]="delProductID" name="product_delete_id"> <br>
+		<button (click)="deleteProduct()" style="margin-top: 20px;">Delete Product</button>
+		<h2>Update Product </h2> 
+		Product ID:<input type="text" [(ngModel)]="upProductID" name="product_update_id" style="margin-left: 5px;"> <br>
+		Product Name: <input type="text" [(ngModel)]="upProductName" name="product_update_name" style="margin-left: 5px;"><br>
+		<button (click)="updateProduct()" style="margin-top: 20px;">Update Product</button>
+		<h2>List Product </h2>
+    <button (click)="listProducts()" style="margin-top: 20px;">List Products</button>
+      <table align="center" border="1px" bordercolor="black">
+          <tr>
+              <th>ID</th>
+              <th>Product</th>
+          </tr>
+          <tr *ngFor="let product of products">
+              <td>{{product.id}}</td>
+              <td>{{product.productName}}</td>
+          </tr>
+      </table>`

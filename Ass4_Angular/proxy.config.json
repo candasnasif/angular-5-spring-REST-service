@@ -1,0 +1,18 @@
+{
+  "/login/auth": {
+    "target": "http://localhost:8080/SpringProject2",
+    "secure": false
+  },
+  "/register/*": {
+    "target": "http://localhost:8080/SpringProject2",
+    "secure": false
+  },
+  "/owner/*": {
+    "target": "http://localhost:8080/SpringProject2",
+    "secure": false
+  },
+  "/customer/*": {
+    "target": "http://localhost:8080/SpringProject2",
+    "secure": false
+  }
+}

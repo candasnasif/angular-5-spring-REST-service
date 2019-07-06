@@ -1,0 +1,11 @@
+
+<nav><a align="right" routerLink="/login" routerLinkActive="active">Back</a></nav>
+<router-outlet></router-outlet>
+		<h2>Customer Registration </h2>
+		Username:<input type="text" [(ngModel)]="customer.username" name="customer_registration_username" style="margin-left: 5px;" > <br>
+		Password: <input type="password"[(ngModel)]="customer.password" name="customer_registration_password" style="margin-left: 4px;"><br>
+		Name:<input type="text" [(ngModel)]="customer.name" name="customer_registration_name" style="margin-left: 15px;" > <br>
+		Surname: <input type="text" [(ngModel)]="customer.surname" name="customer_registration_surname" style="margin-left: 4px;"><br>
+		Address: <input type="text" [(ngModel)]="customer.address" name="customer_registration_address" style="margin-left: 5px;"><br>
+		<button (click)="customerRegister()" style="margin-top: 20px;">Register</button>
+

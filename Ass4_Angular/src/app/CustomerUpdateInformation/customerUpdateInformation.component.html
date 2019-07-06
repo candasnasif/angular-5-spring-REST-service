@@ -1,0 +1,15 @@
+
+    <nav><a align="right" routerLink="/login" routerLinkActive="active">Logout</a></nav>
+    <nav><a routerLink="/customer" routerLinkActive="active">Back to Customer Page</a></nav>
+    <router-outlet></router-outlet>
+    <h3> Name&Surname : {{customer.name}} {{customer.surname}} <br> Username : {{customer.username}}</h3>
+
+    <h2>Update Informations </h2>
+    
+		Change Password:<input type="password" [(ngModel)]="updateCustomer.password" name="change_password" style="margin-left: 5px;" ><br>
+		Change Name <input type="text"  [(ngModel)]="updateCustomer.name" name="change_name" style="margin-left: 5px;"><br>
+		Change Surname <input type="text"  [(ngModel)]="updateCustomer.surname" name="change_surname" style="margin-left: 5px;"><br>
+		Change Address <input type="text"  [(ngModel)]="updateCustomer.address" name="change_address" style="margin-left: 5px;"><br>
+        <button (click)="updateInformation()" style="margin-top: 20px;">Update</button>
+		
+	

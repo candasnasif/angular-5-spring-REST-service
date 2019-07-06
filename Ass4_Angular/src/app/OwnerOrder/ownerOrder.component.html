@@ -1,0 +1,61 @@
+<nav><a align="right" routerLink="/login" routerLinkActive="active">Logout</a></nav>
+<nav><a routerLink="/owner" routerLinkActive="active">Back to Owner Page</a></nav>
+<router-outlet></router-outlet>
+<h3> Username : {{owner.username}}</h3>
+
+<h1> Owner Order Page </h1>
+	
+
+		<h2>View Orders Status </h2> 
+		<button (click)="viewOrders()" style="margin-top: 20px;">View Orders</button>
+		<table align="center" border="1px" bordercolor="black">
+			<tr>
+				<th>Customer Username</th>
+				<th>Order ID</th>
+				<th>Address</th> 
+				<th>Product Name</th>
+				<th>Number Of Pieces</th>
+				<th>Date</th>
+				<th>Status</th>
+			</tr>
+			<tr *ngFor="let order of orders">
+				<td>{{order.customer.username}}</td>
+				<td>{{order.orderID}}</td>
+				<td>{{order.customer.address}}</td>
+				<td>{{order.product.productName}}</td>
+				<td>{{order.number_of_pieces}}</td>
+				<td>{{order.date}}</td>
+				<td>{{order.status}}</td>
+
+			</tr>
+		</table>`
+		<h2>Update Order Status </h2>
+		Order ID:<input type="text" [(ngModel)]="orderID" name="order_update_id" style="margin-left: 5px;"> <br>
+		New Status :<input type="text" [(ngModel)]="newStatus" name="order_update_newstatus" style="margin-left: 5px;"> <br>
+		<button (click)="updateOrder()" style="margin-top: 20px;">Update</button>
+
+		<h2>Customer Order History </h2> 
+		Customer Username : <input type="text" [(ngModel)]="customerUserName" name="customer_username" style="margin-left: 5px;"> <br>
+		<button (click)="viewCustomerOrderHistory()" style="margin-top: 20px;">View Customer Order History</button>
+
+		<table align="center" border="1px" bordercolor="black">
+			<tr>
+				<th>Customer Username</th>
+				<th>Order ID</th>
+				<th>Address</th> 
+				<th>Product Name</th>
+				<th>Number Of Pieces</th>
+				<th>Date</th>
+				<th>Status</th>
+			</tr>
+			<tr *ngFor="let order of customerOrders">
+				<td>{{order.customer.username}}</td>
+				<td>{{order.orderID}}</td>
+				<td>{{order.customer.address}}</td>
+				<td>{{order.product.productName}}</td>
+				<td>{{order.number_of_pieces}}</td>
+				<td>{{order.date}}</td>
+				<td>{{order.status}}</td>
+
+			</tr>
+		</table>`

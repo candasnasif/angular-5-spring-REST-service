@@ -1,0 +1,18 @@
+
+
+
+<h2>Hi {{customer.name}} {{customer.surname}}({{customer.username}})! Welcome to Customer Page</h2>
+
+
+
+
+<nav><a align="right" routerLink="/login" routerLinkActive="active">Logout</a></nav>
+<h3>
+  <nav>
+    <a routerLink="/customerOrder" routerLinkActive="active">Order Operations</a>
+    <br><br>
+     <a routerLink="/customerUpdateInformation" routerLinkActive="active"> Update Account </a>
+    
+  </nav>
+  <h3>
+  <router-outlet></router-outlet>

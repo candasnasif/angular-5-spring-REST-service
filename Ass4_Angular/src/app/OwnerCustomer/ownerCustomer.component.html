@@ -1,0 +1,38 @@
+    <nav><a align="right" routerLink="/login" routerLinkActive="active">Logout</a></nav>
+	<nav><a routerLink="/owner" routerLinkActive="active">Back to Owner Page</a></nav>
+    <router-outlet></router-outlet>
+    <h3> Username : {{owner.username}}</h3>
+		<h2>Create Customer </h2>
+		Customer Username:<input type="text" [(ngModel)]="newCustomer.username" name="customer_username" style="margin-left: 5px;" > <br>
+		Customer Password: <input type="password" [(ngModel)]="newCustomer.password" name="customer_password" style="margin-left: 5px;"><br>
+		Customer Name:<input type="text" [(ngModel)]="newCustomer.name" name="customer_name" style="margin-left: 5px;" > <br>
+		Customer Surname: <input type="text" [(ngModel)]="newCustomer.surname" name="customer_surname" style="margin-left: 5px;"><br>
+		Customer Address: <input type="text" [(ngModel)]="newCustomer.address" name="customer_address" style="margin-left: 5px;"><br>
+		<button (click)="customerRegister()" style="margin-top: 20px;">Create Customer</button>
+		
+		<h2>Edit Customer </h2>
+		Enter Customer Username: <input type="text" [(ngModel)]="editCustomer.username" name="edit_username" style="margin-left: 5px;"><br>
+		New Password: <input type="password" [(ngModel)]="editCustomer.password" name="new_password" style="margin-left: 5px;"><br>
+		New Name:<input type="text" [(ngModel)]="editCustomer.name" name="new_name" style="margin-left: 5px;" > <br>
+		New Surname: <input type="text" [(ngModel)]="editCustomer.surname" name="new_surname" style="margin-left: 5px;"><br>
+		New Address: <input type="text" [(ngModel)]="editCustomer.address" name="new_address" style="margin-left: 5px;"><br>
+		<button (click)="updateCustomer()" style="margin-top: 20px;">Edit Customer</button>
+		
+    <h2>List Customers </h2>
+    <button (click)="listCustomers()" style="margin-top: 20px;">List Customers</button>
+      <table align="center" border="1px" bordercolor="black">
+          <tr>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Name</th> 
+              <th>Surname</th>
+              <th>Address</th>
+          </tr>
+          <tr *ngFor="let customer of customers">
+              <td>{{customer.username}}</td>
+              <td>{{customer.password}}</td>
+              <td>{{customer.name}}</td>
+              <td>{{customer.surname}}</td>
+              <td>{{customer.address}}</td>
+          </tr>
+      </table>`

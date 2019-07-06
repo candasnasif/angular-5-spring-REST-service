@@ -1,0 +1,7 @@
+<nav><a align="right" routerLink="/login" routerLinkActive="active">Back</a></nav>
+<router-outlet></router-outlet>
+
+		<h2>Owner Registration </h2>
+		Username:<input type="text" [(ngModel)]="owner.username" name="owner_registration_username" style="margin-left: 5px;" > <br>
+		Password: <input type="password" [(ngModel)]="owner.password" name="owner_registration_password" style="margin-left: 4px;"><br>
+		<button (click)="ownerRegister()" style="margin-top: 20px;">Register</button>

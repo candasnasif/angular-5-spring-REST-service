@@ -1,0 +1,56 @@
+<nav><a align="right" routerLink="/login" routerLinkActive="active">Logout</a></nav>
+<nav><a  routerLink="/customer" routerLinkActive="active">Back to Customer Page</a></nav>
+<router-outlet></router-outlet>
+
+<h3> Name&Surname : {{customer.name}} {{customer.surname}} <br> Username : {{customer.username}}</h3>
+<h1> Customer Order Page </h1>
+
+
+<table align="center" border="1px" bordercolor="black">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.productName}}</td>
+        
+    </tr>
+</table>`
+
+
+		<h2>Create Order </h2>
+		Product ID: <input type="text" [(ngModel)]="productID" name="order_product_id" style="margin-left: 5px;"><br>
+		Number of Pieces: <input type="text" [(ngModel)]="numberOfPieces" name="order_number_of_pieces" style="margin-left: 5px;"><br>
+		<button (click)="createOrder()" style="margin-top: 20px;">Create Order</button>
+
+
+		<h2>List all customer orders </h2>
+		<button (click)="listOrders()" style="margin-top: 20px;">View</button>
+
+        <table align="center" border="1px" bordercolor="black">
+            <tr>
+                <th>OrderID</th>
+                <th>Prodocut Name</th>
+                <th>Number Of Piece</th> 
+                <th>Date</th>
+                <th>Status</th>
+               
+            </tr>
+            <tr *ngFor="let order of orders">
+                <td>{{order.orderID}}</td>
+                <td>{{order.product.productName}}</td>
+                <td>{{order.number_of_pieces}}</td>
+                <td>{{order.date}}</td>
+                <td>{{order.status}}</td>
+    
+            </tr>
+        </table>
+
+
+
+		<h2>Check Status Order </h2>
+		Order ID:<input type="text" [(ngModel)]="orderID" name="order_status_id" style="margin-left: 5px;" > 
+		<button (click)="checkStatus()" style="margin-top: 20px;">Check Status</button>
+
+		
